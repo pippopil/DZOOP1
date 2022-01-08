@@ -55,7 +55,6 @@ class Radio1Test {
     @Test
     public void UnderInitialRadioStation() {
         radio.setCurrentRadioStation(-1);
-        //radio.pressPrevStation();
         assertEquals(0, radio.currentRadioStation);
     }
 
@@ -80,8 +79,6 @@ class Radio1Test {
     }
 
 
-
-
     @Test
     public void volumeOverMax() {
         radio.currentVolume = 11;
@@ -90,8 +87,8 @@ class Radio1Test {
     }
 
     @Test
-    public void volumeDownUnderMin() {
-        radio.currentVolume= -1;
+    public void volumeUnderMin() {
+        radio.currentVolume = -1;
         radio.pressMinusVolume();
         assertEquals(0, radio.getMinVolume());
 
